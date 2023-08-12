@@ -5,6 +5,8 @@ from environs import Env
 import betterlogging as bl
 from aiogram import Bot, Dispatcher
 
+from handlers import start
+
 
 def setup_logging():
     log_level = logging.INFO
@@ -28,6 +30,8 @@ async def main():
     bot: Bot = Bot(token=env('BOT_TOKEN'),
                    parse_mode='HTML')
     dp: Dispatcher = Dispatcher()
+
+    dp.include_router(start.start_router)
 
     await bot.delete_webhook(drop_pending_updates=True)
 
