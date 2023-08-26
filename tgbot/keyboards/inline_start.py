@@ -16,16 +16,16 @@ language_kb: InlineKeyboardMarkup = InlineKeyboardMarkup(
 main_buttons_kb: InlineKeyboardMarkup = InlineKeyboardMarkup(
     inline_keyboard=[
         [
-            InlineKeyboardButton(text='Криптовалюты 🪙',
-                                 callback_data='cryptocurrencies_pressed'),
             InlineKeyboardButton(text='Аккаунт 🪪',
-                                 callback_data='account_pressed')
+                                 callback_data='account_pressed'),
+            InlineKeyboardButton(text='Криптовалюты 🪙',
+                                 callback_data='cryptocurrencies_pressed')
         ],
         [
-            InlineKeyboardButton(text='Резервы сервиса 💰',
-                                 callback_data='reserves_pressed'),
             InlineKeyboardButton(text='История обмена 🗃️',
-                                 callback_data='history_pressed')
+                                 callback_data='history_pressed'),
+            InlineKeyboardButton(text='Резервы сервиса 💰',
+                                 callback_data='reserves_pressed')
         ],
         [InlineKeyboardButton(text='Прогноз от Chat GPT 📈',
                               callback_data='forecast_pressed')],
