@@ -5,7 +5,7 @@ from environs import Env
 import betterlogging as bl
 from aiogram import Bot, Dispatcher
 
-from handlers import start, cryptocurrencies
+from handlers import start, cryptocurrencies, other, account
 
 
 def setup_logging():
@@ -33,6 +33,8 @@ async def main():
 
     dp.include_router(start.start_router)
     dp.include_router(cryptocurrencies.crypto_router)
+    dp.include_router(other.other_router)
+    dp.include_router(account.account_router)
 
     await bot.delete_webhook(drop_pending_updates=True)
 
